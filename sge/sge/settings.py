@@ -37,7 +37,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+
+    "comptes.apps.ComptesConfig",
+    "ecole.apps.EcoleConfig",
+    # "compte.apps.CompteConfig",
+    "inscription.apps.InscriptionConfig",
+    "finance.apps.FinanceConfig",
 ]
+
+AUTH_USER_MODEL = "comptes.Utilisateur"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -80,6 +88,7 @@ DATABASES = {
     }
 }
 
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -88,9 +97,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", },
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator", },
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator", },
 ]
 
 
